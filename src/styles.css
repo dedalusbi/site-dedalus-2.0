@@ -1,1 +1,61 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('assets/fonts/CreatoDisplay-Bold.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('assets/fonts/CreatoDisplay-BoldItalic.otf') format('otf');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('assets/fonts/CreatoDisplay-Light.otf') format('otf');
+    font-weight: light;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('assets/fonts/CreatoDisplay-LightItalic.otf') format('otf');
+    font-weight: light;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('assets/fonts/CreatoDisplay-Medium.otf') format('otf');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('assets/fonts/CreatoDisplay-MediumItalic.otf') format('otf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('assets/fonts/CreatoDisplay-Regular.otf') format('otf');
+    font-weight: regular;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('assets/fonts/CreatoDisplay-RegularItalic.otf') format('otf');
+    font-weight: regular;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Creato Display', sans-serif;
+}
