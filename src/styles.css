@@ -59,3 +59,17 @@
 body {
     font-family: 'Creato Display', sans-serif;
 }
+
+.hero-image {
+    width: 100%;
+    max-height: 730px;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 1806px) {
+    .hero-image {
+        width: 100%;
+        height: auto;
+    }
+}
