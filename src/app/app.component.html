@@ -1,7 +1,13 @@
 <app-header></app-header>
 
-<main class="container mx-auto px-4 mt-8">
-    <img src="../assets/hero-image.png" alt="Hero Image" class="rounded-10xl w-full hero-image">
+<main class="container mx-auto px-2 sm:px-4 mt-6">
+    <img src="../assets/hero-image.png" alt="Hero Image" class="rounded-10xl w-full md:max-w-screen lg:max-w-screen-xl md:mx-auto hero-image">
 </main>
+
+<div class="flex flex-col items-center sm:flex-row sm:justify-center gap-4 sm:gap-10 mt-5 bg-custom-gray border-t border-b border-dotted border-light-yellow py-4">
+    <button class="w-full sm:w-auto md:w-80 px-10 py-2 border-none rounded-full rounded-tl-none text-white text-base cursor-pointer transition duration-300 ease-in-out bg-service-blue hover:opacity-90">Nossos serviços </button>
+    <button class="w-full sm:w-auto md:w-80 px-10 py-2 border-none rounded-full rounded-tl-none text-white text-base cursor-pointer transition duration-300 ease-in-out bg-light-yellow hover:opacity-90">Entre em contato </button>
+    <button class="w-full sm:w-auto md:w-80 px-10 py-2 border-none rounded-full rounded-tl-none text-white text-base cursor-pointer transition duration-300 ease-in-out bg-light-orange hover:opacity-90">Conte-nos seus desafios </button>
+</div>
 
 <router-outlet></router-outlet>
