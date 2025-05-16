@@ -8,6 +8,7 @@ module.exports = {
                 'light-yellow': '#E3BF5D',
                 'light-orange': '#E28E65',
                 'light-blue': '#3D99F0',
+                'mygraytext': '#3B4156',
                 'service-blue': '#6E9AC4',
                 'custom-gray': 'rgba(232,232,232,0.33)',
                 
