@@ -1,31 +1,42 @@
-<app-header></app-header>
+<div class="px-48">
+    <app-header></app-header>
 
-<main class="container mx-auto px-2 sm:px-4 mt-6">
-    <img src="../assets/hero-image.png" alt="Hero Image" class="rounded-10xl w-full md:max-w-screen lg:max-w-screen-xl md:mx-auto hero-image">
-</main>
+    <main class="container mx-auto  mt-6">
+        <img src="../assets/hero-image.png" alt="Hero Image" class="rounded-10xl w-full hero-image">
+    </main>
+
+    
+</div>
+
 
 <!-- 3 botões -->
-
 <div class="flex flex-col items-center sm:flex-row sm:justify-center gap-4 sm:gap-10 mt-5 bg-custom-gray border-t border-b border-dotted border-light-yellow py-4">
     <button class="w-full sm:w-auto md:w-80 px-10 py-2 border-none rounded-full rounded-tl-none text-white text-base cursor-pointer transition duration-300 ease-in-out bg-service-blue hover:opacity-90">Nossos serviços </button>
     <button class="w-full sm:w-auto md:w-80 px-10 py-2 border-none rounded-full rounded-tl-none text-white text-base cursor-pointer transition duration-300 ease-in-out bg-light-yellow hover:opacity-90">Entre em contato </button>
     <button class="w-full sm:w-auto md:w-80 px-10 py-2 border-none rounded-full rounded-tl-none text-white text-base cursor-pointer transition duration-300 ease-in-out bg-light-orange hover:opacity-90">Conte-nos seus desafios </button>
 </div>
 
-<!-- quem somos nós -->
 
-<div class="flex flex-col sm:flex-row items-center sm:justify-center gap-2 mt-8 mx-48">
-    <div class="w-full sm:w-1/2 flex justify-center">
-        <img src="../assets/imagem-quem-somos-nos.png" alt="Quem somos nós?" class="max-w-sm">
+<div class="px-48">
+
+
+
+    <!--QUEM SOMOS NÓS-->
+    <div id="quem-somos-nos" class="flex flex-col sm:flex-row items-center sm:justify-center gap-2 mt-8">
+        <div class="w-full sm:w-1/2 flex justify-center">
+            <img src="../assets/imagem-quem-somos-nos.png" alt="Quem somos nós?" class="max-w-sm">
+        </div>
+        <div class="w-full sm:w-1/2 px-4">
+            <h2 class="text-lg font-semibold mb-4 text-center text-font-poppins">Quem somos nós?</h2>
+            <p class="text-mygraytext font-light text-lg text-left">Somos uma empresa oriunda de Manaus/AM que tem como objetivo proporcionar segurança na tomada
+                de decisões em sua empresa. Utilizando algoritmos de <a class="underline" href="https://pt.wikipedia.org/wiki/Aprendizado_de_m%C3%A1quina">Aprendizado de Máquina </a>,
+                identificamos padrões e tendências não acessíveis de outra forma. Nossos serviços podem ser aplicados em todas as áreas
+            de sua empresa, em uma amplidão de potenciais projetos personalizados que trarão eficiência e economia. </p>
+        </div>
     </div>
-    <div class="w-full sm:w-1/2 px-4">
-        <h2 class="text-lg font-semibold mb-4 text-center text-font-poppins">Quem somos nós?</h2>
-        <p class="text-mygraytext font-light text-lg text-left">Somos uma empresa oriunda de Manaus/AM que tem como objetivo proporcionar segurança na tomada
-             de decisões em sua empresa. Utilizando algoritmos de <a class="underline" href="https://pt.wikipedia.org/wiki/Aprendizado_de_m%C3%A1quina">Aprendizado de Máquina </a>,
-            identificamos padrões e tendências não acessíveis de outra forma. Nossos serviços podem ser aplicados em todas as áreas
-        de sua empresa, em uma amplidão de potenciais projetos personalizados que trarão eficiência e economia. </p>
-    </div>
+
+
+    <router-outlet></router-outlet>
+
+
 </div>
-
-
-<router-outlet></router-outlet>
