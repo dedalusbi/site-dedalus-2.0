@@ -9,6 +9,7 @@ module.exports = {
                 'light-orange': '#E28E65',
                 'step-number-blue': '#364E64',
                 'step-card-blue': '#CCE4FA',
+                'step-card-yellow': '#FFE7A8',
                 'light-blue': '#3D99F0',
                 'mygraytext': '#3B4156',
                 'service-blue': '#6E9AC4',
