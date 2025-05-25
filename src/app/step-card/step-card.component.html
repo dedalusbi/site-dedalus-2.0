@@ -1,6 +1,6 @@
 <div class="relative items-start gap-4" [ngClass]="{'flex': numberPosition === 'left','flex-row-reverse': numberPosition === 'right' }">
-    <div class="step-number-container text-9xl text-font-poppins font-bold text-step-number-blue opacity-30 absolute top-0" [ngClass]="{'left-[-40px]': numberPosition === 'left','right-[-40px]': numberPosition === 'right'}"> {{stepNumber}}</div>
-    <div class="text-card p-6 rounded-3xl shadow-md" [ngClass]="{'bg-step-card-blue': bgColorClass==='bg-step-card-blue','bg-step-card-yellow': bgColorClass==='bg-step-card-yellow','rounded-tl-none': numberPosition === 'left','rounded-tr-none': numberPosition === 'right' }">
+    <div class="step-number-container text-9xl text-font-poppins font-bold text-step-number-blue opacity-30 absolute top-0" [ngClass]="{'left-[-30px]': numberPosition === 'left','right-[-30px]': numberPosition === 'right'}"> {{stepNumber}}</div>
+    <div class="text-card p-6 rounded-3xl shadow-md text-base" [ngClass]="{'bg-step-card-blue': bgColorClass==='bg-step-card-blue','bg-step-card-yellow': bgColorClass==='bg-step-card-yellow','rounded-tl-none': numberPosition === 'left','rounded-tr-none': numberPosition === 'right' }">
         <span class="font-bold"> {{title}}.</span> {{text}}
     </div>
 </div>

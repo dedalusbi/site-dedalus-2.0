@@ -2,7 +2,7 @@
     <app-header></app-header>
 
     <main class="container mx-auto  mt-6">
-        <img src="../assets/hero-image.png" alt="Hero Image" class="rounded-10xl w-full hero-image">
+        <img src="../assets/hero.png" alt="Hero Image" class="rounded-10xl w-full hero-image">
     </main>
 
     
@@ -36,16 +36,28 @@
     </div>
 
 
-    <!-- video container-->
+</div>
 
-    <app-videocontainer ></app-videocontainer>
+<!-- video container-->
+<app-videocontainer ></app-videocontainer>
 
+
+
+<div class="px-48">
     <!--Nossa operação -->
-    <div  id="nossa_operacao" class="mt-10">
-        <app-step-card [stepNumber]="1" [numberPosition]="'left'" [bgColorClass]="'bg-step-card-blue'" [title]="'Reuniões preliminares e análise do negócio'" [text]="'Onde entendemos seus objetivos, desafios e expectativas, e você entende nosso negócio. Essa troca de informações será crucial para traçarmos um plano personalizado para a implementação de soluções sob medida.'"> </app-step-card>
-        <app-step-card [stepNumber]="2" [numberPosition]="'right'" [bgColorClass]="'bg-step-card-yellow'" [title]="'Análise dos dados e engenharia de requisitos'" [text]="'De forma responsável, coletamos, selecionamos e processamos os dados relevantes, sejam eles de vendas, clientes, operações ou qualquer área estratégica para o seu negócio.'"> </app-step-card>
-        <app-step-card [stepNumber]="3" [numberPosition]="'left'" [bgColorClass]="'bg-step-card-blue'" [title]="'Desenvolvimento do modelo de previsão'" [text]="'Utilizamos técnicas de Aprendizado de Máquina pra treinar modelos que aprenderão com seus dados, fazendo previsões e utilizando-as para melhorar sua eficiência, identificando padrões complexos.'"> </app-step-card>
-        <app-step-card [stepNumber]="4" [numberPosition]="'right'" [bgColorClass]="'bg-step-card-yellow'" [title]="'Geramos Insights'" [text]="'Com base nos modelos treinados, extraímos insights valiosos e previsões precisas sobre o seu negócio, permitindo que você foque na estratégia e tome decisões melhores.'"> </app-step-card>
+    <div  id="nossa_operacao" class="mt-18 grid grid-cols-1 md:grid-cols-[65%_35%] gap-8 items-stretch">
+        <div class="flex flex-col justify-center">
+            <h2 class="text-font-poppins text-center font-semibold mb-4">Nossa operação: Adaptabilidade e excelência</h2>
+            <app-step-card [stepNumber]="1" [numberPosition]="'left'" [bgColorClass]="'bg-step-card-blue'" [title]="'Reuniões preliminares e análise do negócio'" [text]="'Onde entendemos seus objetivos, desafios e expectativas, e você entende nosso negócio. Essa troca de informações será crucial para traçarmos um plano personalizado para a implementação de soluções sob medida.'"> </app-step-card>
+            <app-step-card [stepNumber]="2" [numberPosition]="'right'" [bgColorClass]="'bg-step-card-yellow'" [title]="'Análise dos dados e engenharia de requisitos'" [text]="'De forma responsável, coletamos, selecionamos e processamos os dados relevantes, sejam eles de vendas, clientes, operações ou qualquer área estratégica para o seu negócio.'"> </app-step-card>
+            <app-step-card [stepNumber]="3" [numberPosition]="'left'" [bgColorClass]="'bg-step-card-blue'" [title]="'Desenvolvimento do modelo de previsão'" [text]="'Utilizamos técnicas de Aprendizado de Máquina pra treinar modelos que aprenderão com seus dados, fazendo previsões e utilizando-as para melhorar sua eficiência, identificando padrões complexos.'"> </app-step-card>
+            <app-step-card [stepNumber]="4" [numberPosition]="'right'" [bgColorClass]="'bg-step-card-yellow'" [title]="'Geramos Insights'" [text]="'Com base nos modelos treinados, extraímos insights valiosos e previsões precisas sobre o seu negócio, permitindo que você foque na estratégia e tome decisões melhores.'"> </app-step-card>
+        </div>
+        <div class="flex flex-col  items-center justify-center gap-4">
+            <img src="../assets/nossaoperacao1.png" alt="Nossa operação 1" class="max-w-full h-auto object-contain">
+            <img src="../assets/nossaoperacao2.png" alt="Nossa operação 2" class="max-w-full h-auto object-contain">
+            
+        </div>
     </div>
 
     <router-outlet></router-outlet>
