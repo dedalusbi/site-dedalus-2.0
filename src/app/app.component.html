@@ -11,9 +11,9 @@
 
 <!-- 3 botões -->
 <div class="flex flex-col items-center sm:flex-row sm:justify-center gap-4 sm:gap-10 mt-5 bg-custom-gray border-t border-b border-dotted border-light-yellow py-4">
-    <button class="w-full sm:w-auto md:w-80 px-10 py-2 border-none rounded-full rounded-tl-none text-white text-base cursor-pointer transition duration-300 ease-in-out bg-service-blue hover:opacity-90">Nossos serviços </button>
-    <button class="w-full sm:w-auto md:w-80 px-10 py-2 border-none rounded-full rounded-tl-none text-white text-base cursor-pointer transition duration-300 ease-in-out bg-light-yellow hover:opacity-90">Entre em contato </button>
-    <button class="w-full sm:w-auto md:w-80 px-10 py-2 border-none rounded-full rounded-tl-none text-white text-base cursor-pointer transition duration-300 ease-in-out bg-light-orange hover:opacity-90">Conte-nos seus desafios </button>
+    <a href="#nossos-servicos" class="text-center w-full sm:w-auto md:w-80 px-10 py-2 border-none rounded-full rounded-tl-none text-white text-base cursor-pointer transition duration-300 ease-in-out bg-service-blue hover:opacity-90">Nossos serviços </a>
+    <a class="text-center w-full sm:w-auto md:w-80 px-10 py-2 border-none rounded-full rounded-tl-none text-white text-base cursor-pointer transition duration-300 ease-in-out bg-light-yellow hover:opacity-90">Entre em contato </a>
+    <a class="text-center w-full sm:w-auto md:w-80 px-10 py-2 border-none rounded-full rounded-tl-none text-white text-base cursor-pointer transition duration-300 ease-in-out bg-light-orange hover:opacity-90">Conte-nos seus desafios </a>
 </div>
 
 
@@ -101,20 +101,63 @@
 
     <!-- NOSSOS SERVIÇOS -->
 
-    <div class="mt-10">
+    <div class="mt-10" id="nossos-servicos">
         <h2 class="text-center text-font-poppins text-5xl font-bold text-gray-servicos">Nossos serviços</h2>
     
         
         <div class="mt-4 relative w-full h-64 md:h-96 bg-cover bg-center rounded-4xl overflow-hidden" style="background-image: url('../assets/fundonossosservicos.png')">
             <div class="absolute inset-0 flex flex-col md:flex-row">
-                <div class="w-full md:w-1/2 flex items-center justify-center text-white text-center text-xl md:text-2xl font-bold p-4">
-                    <span>Oferecemos modelos de IA</span>
-                    <span>especializados em previsões na área negocial</span>
+                <div class="w-full md:w-1/2 flex items-center justify-center text-white text-center text-xl md:text-2xl font-bold p-4 flex-col px-32">
+                    <span class="text-left text-4xl md:text-5xl lg:text-6xl text-[#3E4144] text-font-poppins"> Oferecemos modelos de IA</span>
+                    <span class="text-left text-2xl md:text-3xl lg:text-4xl text-white text-font-poppins"> especializados em previsões na área negocial</span>
                 </div>
                 <div class="hidden md:block w-full md:w-1/2 h-full bg-cover bg-center" style="background-image: url('../assets/imagemnossosservicos.png')">
 
                 </div>
             </div>
+        </div>
+
+        <h2 class="mt-2 md:mt-4 lg:mt-8 text-center text-font-poppins text-2xl md:text-3xl lg:text-4xl font-bold text-[#3E4144]">Veja alguns exemplos</h2>
+
+
+        <!-- cartões com exemplos dos serviços -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+            <div class="bg-[#dce9ff] rounded-7xl p-2 sm:p-4 md:p-8 flex flex-col items-center h-auto text-[#606876]">
+                <h3 class="text-font-poppins text-center text-xl font-semibold mb-2">Previsões sobre o negócio</h3>
+                <p class="text-left text-sm sm:text-base">Analisamos todos os processos internos do seu negócio de modo a antecipar demandas futuras, otimizar o inventário, dinamizar sua oferta e maximizar seus lucros.</p>
+                <img class="w-[25%] md:w-[35%] lg:w=[65%] h-auto" src="../assets/imagem_previsoessobreonegocio.png" alt="Previsões sobre o negócio">
+            </div>
+
+            <div class="bg-[#c8ffe5] rounded-7xl p-2 sm:p-4 md:p-8 flex flex-col items-center h-auto sm:h-56 md:h-56 text-[#606876]">
+                <h3 class="text-font-poppins text-center text-xl font-semibold mb-2">Segmentação de clientes</h3>
+                <p class="text-left text-sm sm:text-base">Descubra padrões comportamentais em seus clientes para personalizar suas estratégias de marketing. Identifique seus clientes mais "valiosos", personalize suas ofertas e fidelize sua base.</p>
+                <img class="w-[20%] md:w-[30%] lg:w=[60%] h-auto" src="../assets/imagem_segmentacaodeclientes.png" alt="Segmentação de clientes">
+            </div>
+
+            <div class="bg-[#e9ffb9] rounded-7xl p-2 sm:p-4 md:p-8 flex flex-col items-center h-auto text-[#606876]">
+                <h3 class="text-font-poppins text-center text-xl font-semibold mb-2">Detecção de fraude</h3>
+                <p class="text-left text-sm sm:text-base">Preveja fraudes antes que elas aconteçam, protegendo seus recursos e sua reputação.</p>
+                <img class="w-[25%] md:w-[35%] lg:w=[65%] h-auto" src="../assets/imagem_deteccaodefraudes.png" alt="Detecção de fraudes">
+            </div>
+
+            <div class="bg-[#d1f4ff] rounded-7xl p-2 sm:p-4 md:p-8 flex flex-col items-center h-auto text-[#606876]">
+                <h3 class="text-font-poppins text-center text-xl font-semibold mb-2">Otimização de produção</h3>
+                <p class="text-left text-sm sm:text-base">Identifique gargalos e maximize a eficiência de sua linha de produção.</p>
+                <img class="w-[25%] md:w-[35%] lg:w=[65%] h-auto" src="../assets/imagem_otimizacaodeproducao.png" alt="Otimização de produção">
+            </div>
+
+            <div class="bg-[#dce9ff] rounded-7xl p-2 sm:p-4 md:p-8 flex flex-col items-center h-auto sm:h-56 md:h-56 text-[#606876]">
+                <h3 class="text-font-poppins text-center text-xl font-semibold mb-2">Otimização logística</h3>
+                <p class="text-left text-sm sm:text-base">Maximize a lucratividade em todas as áreas do seu negócio.</p>
+                <img class="w-[20%] md:w-[30%] lg:w=[60%] h-auto" src="../assets/imagem_otimizacaologistica.png" alt="Otimização logística">
+            </div>
+
+            <div class="bg-[#c8ffe5] rounded-7xl p-2 sm:p-4 md:p-8 flex flex-col items-center h-auto text-[#606876]">
+                <h3 class="text-font-poppins text-center text-xl font-semibold mb-2">Estes são apenas alguns exemplos do que podemos oferecer.</h3>
+                <img class="w-[25%] md:w-[35%] lg:w=[65%] h-auto" src="../assets/imagem_apenasalgunsexemplos.png" alt="Exemplos">
+            </div>
+
         </div>
 
     </div>
