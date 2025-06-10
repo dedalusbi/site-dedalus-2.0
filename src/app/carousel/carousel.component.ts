@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { routes } from '../app.routes';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-carousel',
-  imports: [CommonModule, FormsModule, RouterModule, routes, BrowserAnimationsModule, CarouselModule],
+  imports: [CommonModule, FormsModule, RouterModule, routes, CarouselModule],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css'
 })
@@ -15,11 +14,11 @@ export class CarouselComponent {
 
   customOptions: OwlOptions = {
     loop: true,
-    mouseDrag: false,
+    mouseDrag: true,
     touchDrag: false,
     pullDrag: false,
-    dots: false,
-    navSpeed: 700,
+    dots: true,
+    navSpeed: 400,
     navText: ['', ''],
     responsive: {
       0: {
@@ -35,7 +34,7 @@ export class CarouselComponent {
         items: 4
       }
     },
-    nav: true
+    nav: false
   }
 
 

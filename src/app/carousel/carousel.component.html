@@ -1,17 +1,10 @@
-<div class="w-full overflow-x-auto flex">
-    <div *ngFor="let item of items" class="flex flex-col items-center mx-4 cursor-pointer flex-shrink-0" (click)="selectItem(item)">
-        <h3 class="text-center">{{ item.title }}</h3>
-        <img [src]="item.imageSrc" alt="{{item.title}}" class="rounded-lg w-40 h-40 object-cover">
-        <div *ngIf="selectedItem === item" class="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-black mt-2"></div>
-    </div>
-
-</div>
-
 
 <owl-carousel-o [options]="customOptions">
     <ng-container *ngFor="let item of items">
         <ng-template carouselSlide>
-          <img [src]="item.imageSrc" [alt]="item.title" [title]="item.title">
+            <h3 class="text-center">{{ item.title }}</h3>
+            <img [src]="item.imageSrc" [alt]="item.title" (click)="selectItem(item)" [title]="item.title" class="cursor-pointer rounded-lg mx-4 w-40 h-40 object-cover">
+            <div *ngIf="selectedItem === item" class="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-black mt-2"></div>
         </ng-template>
     </ng-container>
 </owl-carousel-o>
