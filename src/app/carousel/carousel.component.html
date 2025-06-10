@@ -12,8 +12,8 @@
 </owl-carousel-o>
 
 
-<div *ngIf="selectedItem" class="mt-8 relative">
-    <div class="w-11/12 px-2-4">
+<div *ngIf="selectedItem" class="mt-8 flex flex-col md:flex-row relative">
+    <div class="w-full md:w-11/12 px-4">
         <h2 class="font-bold text-center text-4xl text-font-poppins"> {{selectedItem.contentTitle}}</h2>
         <div class="bg-[#e9ffb9] rounded-lg p-4 pr-[20%]">
             <div *ngFor="let section of selectedItem.contentSections" >
