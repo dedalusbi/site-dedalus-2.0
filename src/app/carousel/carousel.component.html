@@ -1,0 +1,33 @@
+<div class="w-full overflow-x-auto flex">
+    <div *ngFor="let item of items" class="flex flex-col items-center mx-4 cursor-pointer flex-shrink-0" (click)="selectItem(item)">
+        <h3 class="text-center">{{ item.title }}</h3>
+        <img [src]="item.imageSrc" alt="{{item.title}}" class="rounded-lg w-40 h-40 object-cover">
+        <div *ngIf="selectedItem === item" class="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-black mt-2"></div>
+    </div>
+
+</div>
+
+
+<owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let item of items">
+        <ng-template carouselSlide>
+          <img [src]="item.imageSrc" [alt]="item.title" [title]="item.title">
+        </ng-template>
+    </ng-container>
+</owl-carousel-o>
+
+
+<div *ngIf="selectedItem" class="mt-8 flex">
+    <div class="w-1/2 px-4">
+        <h2 class="text-xl font-semibold mb-4"> {{selectedItem.contentTitle}}</h2>
+        <div class="bg-[#e9ffb9] rounded-lg p-4">
+            <div *ngFor="let section of selectedItem.contentSections">
+                <p class="font-semibold underline mb-2">{{section.sectionTitle}}</p>
+                <p class="text-gray-700 mb-4">{{section.sectionText}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="w-1/2 flex justify-center items-center">
+        <img [src]="selectedItem.sideImageSrc" alt="Imagem relacionada" class="max-h-64">
+    </div>
+</div>
