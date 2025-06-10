@@ -2,25 +2,27 @@
 <owl-carousel-o [options]="customOptions">
     <ng-container *ngFor="let item of items">
         <ng-template carouselSlide>
-            <h3 class="text-center">{{ item.title }}</h3>
-            <img [src]="item.imageSrc" [alt]="item.title" (click)="selectItem(item)" [title]="item.title" class="cursor-pointer rounded-lg mx-4 w-40 h-40 object-cover">
-            <div *ngIf="selectedItem === item" class="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-black mt-2"></div>
+            <div class="mx-4 px-2 w-full">
+                <h3 class="text-center text-font-poppins">{{ item.title }}</h3>
+                <img [src]="item.imageSrc" [alt]="item.title" (click)="selectItem(item)" [title]="item.title" class="cursor-pointer rounded-4xl w-40 h-40 object-cover">
+                <div *ngIf="selectedItem === item" class="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-black mt-2 mx-auto"></div>
+            </div>
         </ng-template>
     </ng-container>
 </owl-carousel-o>
 
 
-<div *ngIf="selectedItem" class="mt-8 flex">
-    <div class="w-1/2 px-4">
-        <h2 class="text-xl font-semibold mb-4"> {{selectedItem.contentTitle}}</h2>
-        <div class="bg-[#e9ffb9] rounded-lg p-4">
-            <div *ngFor="let section of selectedItem.contentSections">
-                <p class="font-semibold underline mb-2">{{section.sectionTitle}}</p>
-                <p class="text-gray-700 mb-4">{{section.sectionText}}</p>
+<div *ngIf="selectedItem" class="mt-8 relative">
+    <div class="w-11/12 px-2-4">
+        <h2 class="font-bold text-center text-4xl text-font-poppins"> {{selectedItem.contentTitle}}</h2>
+        <div class="bg-[#e9ffb9] rounded-lg p-4 pr-[20%]">
+            <div *ngFor="let section of selectedItem.contentSections" >
+                <p class="mb-2 font-extralight"> <span class="underline mb-2 ">{{section.sectionTitle}}</span>
+                    <span class="">: {{section.sectionText}}</span></p>
             </div>
         </div>
     </div>
-    <div class="w-1/2 flex justify-center items-center">
-        <img [src]="selectedItem.sideImageSrc" alt="Imagem relacionada" class="max-h-64">
+    <div class="w-1/4 absolute right-0 top-1/2 transform -translate-y-1/2 z-10 flex justify-center items-center">
+        <img [src]="selectedItem.sideImageSrc" alt="Imagem relacionada" class="max-h-64 w-full object-cover">
     </div>
 </div>
