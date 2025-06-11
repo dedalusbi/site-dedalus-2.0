@@ -1,0 +1,8 @@
+<div class="relative items-start gap-4 flex">
+    <div class="step-number-container absolute left-[-50px]">
+        <img [src]="imageUrl" alt="Imagem" class="w-[80%] h-auto">
+    </div>
+    <div class="text-card p-6 rounded-3xl shadow-md text-base rounded-tl-none" [ngClass]="{'bg-step-card-blue': bgColorClass==='bg-step-card-blue','bg-step-card-yellow': bgColorClass==='bg-step-card-yellow'}">
+        <span class="font-bold"> {{title}}.</span> {{text}}
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.step-number-container {
+    position:absolute;
+    /*left: -30px;*/
+    z-index: 1;
+}
+
+.text-card {
+    margin-top: 20px;
+    position: relative;
+    z-index:0;
+}

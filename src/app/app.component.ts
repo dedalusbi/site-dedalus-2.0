@@ -4,10 +4,11 @@ import { HeaderComponent } from "./header/header.component";
 import { VideocontainerComponent } from "./videocontainer/videocontainer.component";
 import { StepCardComponent } from "./step-card/step-card.component";
 import { CarouselComponent } from './carousel/carousel.component';
+import { ImageCardComponent } from './image-card/image-card.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent,VideocontainerComponent, StepCardComponent, CarouselComponent],
+  imports: [RouterOutlet, HeaderComponent,VideocontainerComponent, StepCardComponent, CarouselComponent, ImageCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
