@@ -5,10 +5,12 @@ import { VideocontainerComponent } from "./videocontainer/videocontainer.compone
 import { StepCardComponent } from "./step-card/step-card.component";
 import { CarouselComponent } from './carousel/carousel.component';
 import { ImageCardComponent } from './image-card/image-card.component';
+import { EnqueteSectionComponent } from './enquete-section/enquete-section.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent,VideocontainerComponent, StepCardComponent, CarouselComponent, ImageCardComponent],
+  imports: [RouterOutlet, HeaderComponent,VideocontainerComponent, StepCardComponent, CarouselComponent,
+    ImageCardComponent, EnqueteSectionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
