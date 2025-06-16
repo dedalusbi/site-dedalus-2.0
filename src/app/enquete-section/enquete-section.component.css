@@ -1,3 +1,34 @@
 .thin-font {
     font-weight: 100;
 }
+
+.vote-bar-container {
+    width: 100%; /* Or adjust as needed */
+    background-color: #e0e0e0; /* Grey background for the container */
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden; /* Hide overflow during animation */
+    position: relative;
+  }
+
+  .vote-bar {
+    height: 20px; /* Height of the bar */
+    background-color: #4CAF50; /* Green color for the bar */
+    border-radius: 5px;
+    text-align: center;
+    line-height: 20px; /* Vertically center text */
+    color: white; /* Text color */
+    transition: width 1s ease-in-out; /* Animation */
+  }
+
+  .vote-percentage {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 20px;
+    line-height: 20px;
+    color: black; /* Or a contrasting color */
+    font-size: 0.8em;
+  }

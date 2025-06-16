@@ -18,22 +18,42 @@
             <li class="mb-2">
                 <input type="radio" id="falta_de_dados" name="decision-difficulty" value="falta_de_dados" class="mr-2" [(ngModel)]="selectedVote">
                 <label for="option1">Falta de dados confiáveis</label>
+                <div *ngIf="showResults" class="vote-bar-container">
+                    <div class="vote-bar" [style.width.%]="getVotePercentage('falta_de_dados')"></div>
+                    <span class="vote-percentage"> {{getVotePercentage('falta_de_dados') | number:'1.0-0' }}%</span>
+                </div>
             </li>
             <li class="mb-2">
                 <input type="radio" id="dificuldade_prever" name="decision-difficulty" value="dificuldade_prever" class="mr-2" [(ngModel)]="selectedVote">
                 <label for="option2">Dificuldade em prever cenários</label>
+                <div *ngIf="showResults" class="vote-bar-container">
+                    <div class="vote-bar" [style.width.%]="getVotePercentage('dificuldade_prever')"></div>
+                    <span class="vote-percentage"> {{getVotePercentage('dificuldade_prever') | number:'1.0-0' }}%</span>
+                </div>
             </li>
             <li class="mb-2">
                 <input type="radio" id="alto_risco" name="decision-difficulty" value="alto_risco" class="mr-2" [(ngModel)]="selectedVote">
                 <label for="option3">Alto risco nas decisões</label>
+                <div *ngIf="showResults" class="vote-bar-container">
+                    <div class="vote-bar" [style.width.%]="getVotePercentage('alto_risco')"></div>
+                    <span class="vote-percentage"> {{getVotePercentage('alto_risco') | number:'1.0-0' }}%</span>
+                </div>
             </li>
             <li class="mb-2">
                 <input type="radio" id="tempo_insuficiente" name="decision-difficulty" value="tempo_insuficiente" class="mr-2" [(ngModel)]="selectedVote">
                 <label for="option4">Tempo insuficiente para análises</label>
+                <div *ngIf="showResults" class="vote-bar-container">
+                    <div class="vote-bar" [style.width.%]="getVotePercentage('tempo_insuficiente')"></div>
+                    <span class="vote-percentage"> {{getVotePercentage('tempo_insuficiente') | number:'1.0-0' }}%</span>
+                </div>
             </li>
             <li class="mb-2">
                 <input type="radio" id="atualizacoes" name="decision-difficulty" value="atualizacoes" class="mr-2" [(ngModel)]="selectedVote">
                 <label for="option5">Atualizações em tempo real</label>
+                <div *ngIf="showResults" class="vote-bar-container">
+                    <div class="vote-bar" [style.width.%]="getVotePercentage('atualizacoes')"></div>
+                    <span class="vote-percentage"> {{getVotePercentage('atualizacoes') | number:'1.0-0' }}%</span>
+                </div>
             </li>
         </ul>
 

@@ -12,6 +12,9 @@ import { FormsModule } from '@angular/forms';
 export class EnqueteSectionComponent {
 
   selectedVote: string = '';
+  voteResults: { [key:string] : number } = {};
+  showResults: boolean = false;
+  backendUrl='https://3000-idx-site-dedalus-20-1745439688468.cluster-vpxjqdstfzgs6qeiaf7rdlsqrc.cloudworkstations.dev';
 
   constructor (private http: HttpClient) {
 
@@ -23,20 +26,62 @@ export class EnqueteSectionComponent {
       return;
     }
 
-    const backendUrl='https://3000-idx-site-dedalus-20-1745439688468.cluster-vpxjqdstfzgs6qeiaf7rdlsqrc.cloudworkstations.dev/api/vote';
+    const url=this.backendUrl+'/api/vote';
 
     const requestBody = {vote: this.selectedVote};
 
-    this.http.post(backendUrl, requestBody).subscribe(
+    this.http.post(url, requestBody).subscribe(
       (response) => {
         console.log('Voto enviado com sucesso!', response);
-        alert('Seu voto foi registrado! Obrigado!'); // Feedback para o usuário
-        // Opcional: atualizar a UI com o novo contador recebido na resposta (response)
+        alert('Seu voto foi registrado! Obrigado!');
+        this.getVoteResults();
       },
       (error) => {
         console.error('Erro ao enviar voto:', error);
         alert('Ocorreu um erro ao registrar seu voto. Tente novamente mais tarde.'); // Feedback de erro
       }
+    );
+
+  }
+
+
+
+  getVoteResults():void {
+    const url = this.backendUrl+'/api/votes';
+
+    this.http.get(url).subscribe(
+      (response: any) => {
+        this.voteResults = response;
+        this.showResults = true;
+        console.log('Resultados dos votos: ', this.voteResults);
+      },
+      (error) => {
+        console.error('Erro ao obter resultados dos votos:', error);
+      }
+
+    );
+  }
+
+
+  getVotePercentage(option: string): number {
+    if (!this.voteResults || !this.voteResults[option] || !this.getTotalVotes()) {
+      return 0;
+    }
+
+    let totalVotes = this.getTotalVotes();
+    console.log('Total votes: ', totalVotes);
+
+    return (this.voteResults[option] / totalVotes) * 100;
+  }
+
+
+  getTotalVotes(): number {
+    if (!this.voteResults) {
+      return 0;
+    }
+    
+    return Object.values(this.voteResults).reduce(
+      (total,current) => total+current,0
     );
 
   }
