@@ -48,18 +48,25 @@ export class EnqueteSectionComponent {
 
   getVoteResults():void {
     const url = this.backendUrl+'/api/votes';
+  
+    this.showResults=false;
+    this.voteResults={};
 
-    this.http.get(url).subscribe(
-      (response: any) => {
-        this.voteResults = response;
-        this.showResults = true;
-        console.log('Resultados dos votos: ', this.voteResults);
-      },
-      (error) => {
-        console.error('Erro ao obter resultados dos votos:', error);
-      }
+    setTimeout(()=> {
+      this.http.get(url).subscribe(
+        (response: any) => {
+          this.voteResults = response;
+          this.showResults = true;
+          console.log('Resultados dos votos: ', this.voteResults);
+        },
+        (error) => {
+          console.error('Erro ao obter resultados dos votos:', error);
+        }
+  
+      );
+    }, 50);
 
-    );
+    
   }
 
 
