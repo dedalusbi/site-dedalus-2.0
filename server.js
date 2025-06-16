@@ -53,3 +53,29 @@ app.post('/api/vote', async (req, res) => {
         res.status(500).send({ message: 'Erro ao processar seu voto.', error: error.message});
     }
 });
+
+
+app.get('/api/votes', async (req, res) => {
+    try {
+        const db = mongoose.connection.db;
+        const votesCollection = db.collection('enquete_votes');
+        const validVotes = ['falta_de_dados', 'dificuldade_prever', 'alto_risco', 'tempo_insuficiente', 'atualizacoes'];
+        // Find documents for the valid vote types
+        const votesData = await votesCollection.find({ voto: { $in: validVotes } }, { projection: { _id: 0, voto: 1, contador: 1 } }).toArray();
+        // Format the data into the desired JSON structure
+        const formattedVotes = votesData.reduce((acc, voteDoc) => {
+            acc[voteDoc.voto] = voteDoc.contador;
+            return acc;
+        }, {});
+        // Ensure all valid vote types are included, even if count is 0
+        const finalVotes = validVotes.reduce((acc, voteType) => {
+            acc[voteType] = formattedVotes[voteType] || 0; // Use 0 if no document found for the type
+            return acc;
+        }, {});
+        res.status(200).json(finalVotes);
+    } catch (error) {
+        console.error('Erro ao inserir voto no banco de dados: ', error);
+        res.status(500).send({ message: 'Erro ao processar seu voto.', error: error.message});
+    }
+
+});
