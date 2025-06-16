@@ -1,9 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
-const mongoURI = 'mongodb+srv://icarofne:HaIl1tV2da1mZ6gV@cluster0.bewozf3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const mongoURI = 'mongodb+srv://icarofne:segredo123@cluster0.bewozf3.mongodb.net/site_dedalus?retryWrites=true&w=majority&appName=Cluster0';
+
+app.use(cors());
+app.use(express.json());
+
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
@@ -20,4 +25,31 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
+});
+
+
+app.post('/api/vote', async (req, res) => {
+    try {
+        const db = mongoose.connection.db;     
+        const votesCollection = db.collection('enquete_votes');
+        const vote = req.body.vote;
+        const validVotes = ['falta_de_dados', 'dificuldade_prever', 'alto_risco', 'tempo_insuficiente', 'atualizacoes'];
+
+        if (!vote || !validVotes.includes(vote)) {
+            return res.status(400).send({message: 'Voto inválido ou não fornecido.'});
+        }
+
+        const result = await votesCollection.findOneAndUpdate(
+            {voto: vote},
+            {$inc: {contador: 1}},
+            {upsert: true, returnDocument: 'after'}
+        );
+
+        console.log(`Voto ${vote} registrado. ${result}`);
+        res.status(200).send({message: 'Voto registrado com sucesso.', newCount: result});
+
+    } catch (error) {
+        console.error('Erro ao inserir voto no banco de dados: ', error);
+        res.status(500).send({ message: 'Erro ao processar seu voto.', error: error.message});
+    }
 });

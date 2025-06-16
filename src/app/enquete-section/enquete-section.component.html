@@ -6,7 +6,7 @@
 
         <h2 class="text-base text-font-poppins mb-4 text-center">Quais suas principais dificuldades em relação à tomada de decisão no seu negócio?</h2>
         <img src="../../assets/imagem_enquete.png" alt="imagem enquete" class="mx-auto md:mx-0 mb-4">
-        <button class="bg-[#5677ba] hover:bg-blue-700 text-white thin-font py-2 px-4 rounded-5xl"> 
+        <button (click)="submitVote()" class="bg-[#5677ba] hover:bg-blue-700 text-white thin-font py-2 px-4 rounded-5xl"> 
             Saiba como resolver isso
         </button>
     </div>
@@ -16,23 +16,23 @@
     <div class="md:w-1/2 bg-[#ffe7a8] p-6 rounded-3xl">
         <ul class="flex flex-col h-full justify-around">
             <li class="mb-2">
-                <input type="radio" id="option1" name="decision-difficulty" value="Falta de dados confiáveis" class="mr-2">
+                <input type="radio" id="falta_de_dados" name="decision-difficulty" value="falta_de_dados" class="mr-2" [(ngModel)]="selectedVote">
                 <label for="option1">Falta de dados confiáveis</label>
             </li>
             <li class="mb-2">
-                <input type="radio" id="option2" name="decision-difficulty" value="Dificuldade em prever cenários" class="mr-2">
+                <input type="radio" id="dificuldade_prever" name="decision-difficulty" value="dificuldade_prever" class="mr-2" [(ngModel)]="selectedVote">
                 <label for="option2">Dificuldade em prever cenários</label>
             </li>
             <li class="mb-2">
-                <input type="radio" id="option3" name="decision-difficulty" value="Alto risco nas decisões" class="mr-2">
+                <input type="radio" id="alto_risco" name="decision-difficulty" value="alto_risco" class="mr-2" [(ngModel)]="selectedVote">
                 <label for="option3">Alto risco nas decisões</label>
             </li>
             <li class="mb-2">
-                <input type="radio" id="option4" name="decision-difficulty" value="Tempo insuficiente para análises" class="mr-2">
+                <input type="radio" id="tempo_insuficiente" name="decision-difficulty" value="tempo_insuficiente" class="mr-2" [(ngModel)]="selectedVote">
                 <label for="option4">Tempo insuficiente para análises</label>
             </li>
             <li class="mb-2">
-                <input type="radio" id="option5" name="decision-difficulty" value="Atualizações em tempo real" class="mr-2">
+                <input type="radio" id="atualizacoes" name="decision-difficulty" value="atualizacoes" class="mr-2" [(ngModel)]="selectedVote">
                 <label for="option5">Atualizações em tempo real</label>
             </li>
         </ul>
