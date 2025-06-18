@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {PanelSequenceService} from '../panels/panel-sequence.service';
 
 @Component({
   selector: 'app-enquete-section',
@@ -16,11 +17,16 @@ export class EnqueteSectionComponent {
   showResults: boolean = false;
   backendUrl='https://3000-idx-site-dedalus-20-1745439688468.cluster-vpxjqdstfzgs6qeiaf7rdlsqrc.cloudworkstations.dev';
 
-  constructor (private http: HttpClient) {
+  showConfirmationPanel:boolean = false;
+
+  constructor (private http: HttpClient, public panelSequenceService: PanelSequenceService) {
 
   }
 
-  submitVote(): void {
+  submitVote(voteValue:string): void {
+
+    this.selectedVote = voteValue;
+
     if (!this.selectedVote) {
       alert('Por favor, selecione uma opção antes de pressionar.');
       return;
@@ -33,8 +39,12 @@ export class EnqueteSectionComponent {
     this.http.post(url, requestBody).subscribe(
       (response) => {
         console.log('Voto enviado com sucesso!', response);
-        alert('Seu voto foi registrado! Obrigado!');
         this.getVoteResults();
+
+        //Lógica para exibir o painel de confirmação
+
+        this.showConfirmationPanel = true;
+
       },
       (error) => {
         console.error('Erro ao enviar voto:', error);
@@ -42,6 +52,12 @@ export class EnqueteSectionComponent {
       }
     );
 
+    
+
+  }
+
+  closeConfirmationPanel() {
+    this.showConfirmationPanel = false;
   }
 
 
@@ -92,5 +108,5 @@ export class EnqueteSectionComponent {
     );
 
   }
-
+  
 }

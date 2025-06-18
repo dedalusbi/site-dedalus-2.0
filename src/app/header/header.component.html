@@ -13,11 +13,11 @@
                 <li><a href="#" class="text-myblue border-b border-light-green">Dúvidas Frequentes</a></li>
                 <li><a href="#" class="text-myblue border-b border-light-yellow">Trabalhe conosco</a></li>
                 <li><a href="#" class="text-myblue border-b border-light-orange">Agendar consultoria gratuita</a></li>
-                <li><a href="#" class="text-myblue border-b border-light-blue">Fale com a nossa IA</a></li>
+                <li><a (click)="panelSequenceService.openFirstPanel()" class="cursor-pointer text-myblue border-b border-light-blue">Fale com a nossa IA</a></li>
             </ul>
         </nav>
         <div class="flex items-center">
-            <img src="../../assets/icone_robo.png" alt="Icon" class="h-8">
+            <img (click)="panelSequenceService.openFirstPanel()" src="../../assets/icone_robo.png" alt="Icon" class="cursor-pointer h-8">
         </div>
     </div>
 </header>

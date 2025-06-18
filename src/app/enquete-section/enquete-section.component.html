@@ -6,7 +6,7 @@
 
         <h2 class="text-base text-font-poppins mb-4 text-center">Quais suas principais dificuldades em relação à tomada de decisão no seu negócio?</h2>
         <img src="../../assets/imagem_enquete.png" alt="imagem enquete" class="mx-auto md:mx-0 mb-4">
-        <button (click)="submitVote()" class="bg-[#5677ba] hover:bg-blue-700 text-white thin-font py-2 px-4 rounded-5xl"> 
+        <button (click)="panelSequenceService.openFirstPanel()" class="bg-[#5677ba] hover:bg-blue-700 text-white thin-font py-2 px-4 rounded-5xl"> 
             Saiba como resolver isso
         </button>
     </div>
@@ -16,7 +16,7 @@
     <div class="md:w-1/2 bg-[#ffe7a8] p-6 rounded-3xl">
         <ul class="flex flex-col h-full justify-around">
             <li class="mb-2">
-                <input type="radio" id="falta_de_dados" name="decision-difficulty" value="falta_de_dados" class="mr-2" [(ngModel)]="selectedVote">
+                <input type="radio" id="falta_de_dados" name="decision-difficulty" value="falta_de_dados" class="mr-2" [(ngModel)]="selectedVote" (click)="submitVote('falta_de_dados')">
                 <label for="option1">Falta de dados confiáveis</label>
                 <div *ngIf="showResults" class="vote-bar-container">
                     <div class="vote-bar" [style.width.%]="getVotePercentage('falta_de_dados')"></div>
@@ -24,7 +24,7 @@
                 </div>
             </li>
             <li class="mb-2">
-                <input type="radio" id="dificuldade_prever" name="decision-difficulty" value="dificuldade_prever" class="mr-2" [(ngModel)]="selectedVote">
+                <input type="radio" id="dificuldade_prever" name="decision-difficulty" value="dificuldade_prever" class="mr-2" [(ngModel)]="selectedVote" (click)="submitVote('dificuldade_prever')">
                 <label for="option2">Dificuldade em prever cenários</label>
                 <div *ngIf="showResults" class="vote-bar-container">
                     <div class="vote-bar" [style.width.%]="getVotePercentage('dificuldade_prever')"></div>
@@ -32,7 +32,7 @@
                 </div>
             </li>
             <li class="mb-2">
-                <input type="radio" id="alto_risco" name="decision-difficulty" value="alto_risco" class="mr-2" [(ngModel)]="selectedVote">
+                <input type="radio" id="alto_risco" name="decision-difficulty" value="alto_risco" class="mr-2" [(ngModel)]="selectedVote" (click)="submitVote('alto_risco')">
                 <label for="option3">Alto risco nas decisões</label>
                 <div *ngIf="showResults" class="vote-bar-container">
                     <div class="vote-bar" [style.width.%]="getVotePercentage('alto_risco')"></div>
@@ -40,7 +40,7 @@
                 </div>
             </li>
             <li class="mb-2">
-                <input type="radio" id="tempo_insuficiente" name="decision-difficulty" value="tempo_insuficiente" class="mr-2" [(ngModel)]="selectedVote">
+                <input type="radio" id="tempo_insuficiente" name="decision-difficulty" value="tempo_insuficiente" class="mr-2" [(ngModel)]="selectedVote" (click)="submitVote('tempo_insuficiente')">
                 <label for="option4">Tempo insuficiente para análises</label>
                 <div *ngIf="showResults" class="vote-bar-container">
                     <div class="vote-bar" [style.width.%]="getVotePercentage('tempo_insuficiente')"></div>
@@ -48,7 +48,7 @@
                 </div>
             </li>
             <li class="mb-2">
-                <input type="radio" id="atualizacoes" name="decision-difficulty" value="atualizacoes" class="mr-2" [(ngModel)]="selectedVote">
+                <input type="radio" id="atualizacoes" name="decision-difficulty" value="atualizacoes" class="mr-2" [(ngModel)]="selectedVote" (click)="submitVote('atualizacoes')">
                 <label for="option5">Atualizações em tempo real</label>
                 <div *ngIf="showResults" class="vote-bar-container">
                     <div class="vote-bar" [style.width.%]="getVotePercentage('atualizacoes')"></div>
@@ -59,3 +59,16 @@
 
     </div>
 </section>
+
+
+
+<div *ngIf="showConfirmationPanel" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white p-8 rounded-3xl text-center relative w-8/12">
+        <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-xl" (click)="closeConfirmationPanel()">X</button>
+        <h2 class="text-4xl font-bold text-font-poppins mb-4 text-[#152045]">Obrigado pela sua participação!</h2>
+        <p class="text-[#333333] mb-6">Agradecemos por dedicar seu tempo para compartilhar sua experiência. Os insights fornecidos ajudarão a entender ainda melhor as necessidades de nossos clientes.</p>
+        <img src="../../assets/participacao_enquete.png" alt="Imagem de confirmação" class="mx-auto mb-6 h-auto max-w-[40%]">
+        <button class="bg-gray-400 hover:bg-gray-300 shadow border-2 py-2 px-6 rounded-full" (click)="closeConfirmationPanel()">Retornar ao site</button>
+
+    </div>
+</div>
