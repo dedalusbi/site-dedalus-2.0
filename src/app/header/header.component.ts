@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PanelSequenceService } from '../panels/panel-sequence.service';
+
 
 @Component({
   selector: 'app-header',
@@ -8,5 +8,5 @@ import { PanelSequenceService } from '../panels/panel-sequence.service';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  constructor (public panelSequenceService: PanelSequenceService) {}
+  constructor () {}
 }
