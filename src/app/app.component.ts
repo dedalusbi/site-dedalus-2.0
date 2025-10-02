@@ -4,15 +4,18 @@ import { HeaderComponent } from "./header/header.component";
 import { StepCardComponent } from "./step-card/step-card.component";
 import { CarouselComponent } from './carousel/carousel.component';
 import { ImageCardComponent } from './image-card/image-card.component';
+import { FaqPanelComponent } from './faq-panel/faq-panel.component';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, HeaderComponent,  StepCardComponent, CarouselComponent,
-    ImageCardComponent],
+    ImageCardComponent, FaqPanelComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
+  showFaq=false;
 
   constructor () {}
   
